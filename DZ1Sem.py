@@ -26,12 +26,20 @@ def task1(number):
     else:
         print(f'{number} -> {days_of_week[number]} будний день')
 
+# d = int(input('enter DOW '))
+# if d <= 5:
+#   print('it is workday')
+# else:
+#   print('it is weekend')
 
 # 2.Напишите программу для. проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X
 # ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 def task2(x, y, z):
-    print(not (x and y and z) == (not x and not y and not z))
-
+    # print(not (x and y and z) == (not x and not y and not z))
+    for x in range(2):
+        for y in range(2):
+            for z in range(2):
+                print(not (x or y or z) == (not x and not y and not z))
 
 # 3.Напишите программу, которая принимает на вход координаты точки (X и Y),
 # причём X ≠ 0 и Y ≠ 0 и выдаёт номер четверти плоскости, в которой
@@ -117,3 +125,5 @@ task5(float(input('Введите координату x точки A: ')),
       float(input('Введите координату y точки B: ')))
 # task5(3, 6, 2, 1)
 # task5(7, -5, 1, -1)
+
+
