@@ -49,8 +49,13 @@ def task4(n):
         polynomial_of_degree_n = ''
         while n!=0:
             if n < 2 :
-                polynomial_of_degree_n += f'{random.randint(0, 100)}*x + ' \
-                                          f'{random.randint(0, 100)} = 0\n'
+                result1 = f'{random.randint(0, 100)}*x + '
+                result2 = f'{random.randint(0, 100)} = 0\n'
+                if result1 == '0*x + ':
+                    result1 = ''
+                if result2 == '0 = 0':
+                    result2 = '= 0'
+                polynomial_of_degree_n += result1 + result2
                 break
             else:
                 polynomial_of_degree_n += f'{random.randint(0, 100)}*x^{n} + '
