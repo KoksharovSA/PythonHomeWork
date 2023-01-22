@@ -42,7 +42,7 @@ def task2():
         candy = candy - program_number
 
 
-# task2()
+task2()
 
 # 3.Создайте программу для игры в ""Крестики-нолики"".
 import random
@@ -72,7 +72,7 @@ def task3():
                  cells[0][2] + cells[1][2] + cells[2][2] + '-' + \
                  cells[0][0] + cells[1][1] + cells[2][2] + '-' + \
                  cells[0][2] + cells[1][1] + cells[2][0]
-        result = {'XXX' in winner.split('-'): [False, 'Победил X'],
+        result = {'XXX' in winner.split('-'): [Sem, 'Победил X'],
                   'OOO' in winner.split('-'): [False, 'Победил O'],
                   'XXX' not in winner.split('-') and 'OOO' not in winner.split('-'): [True, '', winner],
                   ' ' not in winner: [False, 'Игра окончена']}[True]
