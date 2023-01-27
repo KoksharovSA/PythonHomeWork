@@ -9,7 +9,7 @@ class Employee:
         
         
     def __str__(self):
-        return f'id: {self.id}; ФИО: {self.name}'
+        return f'id: {self.id}\n ФИО: {self.name}\n Должность: {self.rank}\n Оклад: {self.salary}'
     
     def to_list_employee(self):
         return [self.id, self.name, self.rank, self.salary]

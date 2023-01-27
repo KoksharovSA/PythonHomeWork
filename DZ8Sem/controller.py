@@ -14,7 +14,7 @@ def read_base(text='base.csv'):
             return base_employee
     elif 'json' in text:
         with open(text, 'r', encoding='utf-8') as data:
-            json_reader = json.load(data)
+            json_reader = json.load(data)['Employee']
             base_employee = []
             for item in json_reader:
                 base_employee.append(J_Employee(item))
@@ -37,15 +37,18 @@ def delete_employee(name, text='base.csv'):
     save_base_csv([x.to_list_employee() for x in read_base() if name.lower() not in x.name.lower()], text)
     
     
-def save_base_csv(to_list_employees, text='base.csv'):
+def save_base_csv(to_list_employees, text='output/base.csv'):
+    text = 'output/base.csv' if text == "" else text
     with open(text, 'w', newline='', encoding='utf-8') as data:
         base_writer = csv.writer(data, delimiter=',')
         base_writer.writerows(to_list_employees)
         
 
 def save_base_json(employees, text='output/base.json'):
+    text = 'output/base.json' if text == "" else text
     with open(text, 'w', encoding='utf-8') as f:
-        json.dump(employees, f)
+        json.dump({Employee.__name__: employees}, f)
+    print(f'Файл сохранён по адреcу "{text}"')
 
 
 def find_id(text):
@@ -73,19 +76,3 @@ def find_salary(number: int, sign: str ='='):
 def next_id():
     max([x.id for x in read_base()])
     return max([x.id for x in read_base()])+1
-
-# result = [str(x) for x in read_base() if x.id == 1]
-# print(result)
-# print(find_employee('иван'))
-# print(find_employee('asd'))
-# print(find_rank('главный'))
-# print(find_salary(50000, '>'))
-# print(find_salary(50000, '<'))
-# print(find_salary(50000))
-add_employee(Employee(next_id(), 'Крузенштерн И.Ф.', 'Капитан', 60000))
-# delete_employee('Крузенштерн')
-update_employee('крузенш', Employee(next_id(), 'Крузенштерн И.Ф.', 'Капитан', 160000))
-save_base_csv([x.to_list_employee() for x in read_base()], 'output/new_base.csv')
-save_base_json([x.to_dict() for x in read_base()])
-print([str(x) for x in read_base('output/base.json')])
-
