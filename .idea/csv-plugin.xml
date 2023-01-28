@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/DZ7Sem/output/base.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/DZ8Sem/base.csv">
           <value>
             <Attribute>
@@ -31,7 +38,21 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/DZ8Sem/output/new_base.csv">
+        <entry key="/DZ9Sem/output/base_metal_28_01_23.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/DZ9Sem/output/base_metal_29_01_23.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/DZ9Sem/output/base_metall_28_01_23.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
