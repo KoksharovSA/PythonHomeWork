@@ -72,17 +72,17 @@ def task3():
                  cells[0][2] + cells[1][2] + cells[2][2] + '-' + \
                  cells[0][0] + cells[1][1] + cells[2][2] + '-' + \
                  cells[0][2] + cells[1][1] + cells[2][0]
-        result = {'XXX' in winner.split('-'): [Sem, 'Победил X'],
+        result = {'XXX' in winner.split('-'): [False, 'Победил X'],
                   'OOO' in winner.split('-'): [False, 'Победил O'],
                   'XXX' not in winner.split('-') and 'OOO' not in winner.split('-'): [True, '', winner],
                   ' ' not in winner: [False, 'Игра окончена']}[True]
         return result
     
     def correct_coordinate(coordinate):
-        if len(gamer_cell) == 2 \
-                and int(gamer_cell[0]) <= 3 \
-                and int(gamer_cell[1]) <= 3 \
-                and cells[int(gamer_cell[0]) - 1][int(gamer_cell[1]) - 1] == ' ':
+        if len(coordinate) == 2 \
+                and int(coordinate[0]) <= 3 \
+                and int(coordinate[1]) <= 3 \
+                and cells[int(coordinate[0]) - 1][int(coordinate[1]) - 1] == ' ':
             return True
         else:
             return False
